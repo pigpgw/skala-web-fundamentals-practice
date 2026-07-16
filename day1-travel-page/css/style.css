@@ -123,7 +123,14 @@ section h2 {
   background-color: #e9efff;
 }
 
+.food-content {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+}
+
 #food article {
+  flex: 2;
   padding: 25px;
   background-color: #ffffff;
   border: 1px solid #dddddd;
@@ -131,7 +138,7 @@ section h2 {
 }
 
 #food aside {
-  margin-top: 20px;
+  flex: 1;
   padding: 25px;
   color: #ffffff;
   background-color: #4f46e5;
@@ -171,4 +178,10 @@ footer p {
 
 footer a {
   color: #ffffff;
+}
+
+@media (max-width: 700px) {
+  .food-content {
+    flex-direction: column;
+  }
 }
