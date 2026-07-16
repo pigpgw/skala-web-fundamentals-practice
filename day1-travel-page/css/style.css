@@ -6,4 +6,163 @@
 
 body {
   margin: 0;
+  font-family: "Noto Sans KR", Arial, sans-serif;
+  line-height: 1.6;
+  color: #222222;
+  background-color: #f7f8fc;
+}
+
+p {
+  color: #555555;
+  line-height: 1.7;
+}
+
+a {
+  color: #222222;
+  text-decoration: none;
+}
+
+img,
+video {
+  width: 100%;
+}
+
+header {
+  width: 100%;
+  height: 70px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-bottom: 1px solid #dddddd;
+}
+
+header h1 {
+  font-size: 20px;
+  color: #4f46e5;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+#introduction {
+  padding: 80px 40px;
+  text-align: center;
+  background-color: #e9efff;
+}
+
+#introduction h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+#attractions,
+#food,
+#video {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+section h2 {
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+#attractions article {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+#attractions h3 {
+  width: 100%;
+}
+
+#attractions figure {
+  width: 31%;
+  margin: 0;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+#attractions img {
+  height: 180px;
+  object-fit: cover;
+}
+
+#attractions figcaption {
+  padding: 15px;
+}
+
+#attractions strong {
+  color: #4f46e5;
+}
+
+#attractions figcaption p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+#food {
+  background-color: #e9efff;
+}
+
+#food article {
+  padding: 25px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+}
+
+#food aside {
+  margin-top: 20px;
+  padding: 25px;
+  color: #ffffff;
+  background-color: #4f46e5;
+  border: 1px solid #3730a3;
+  border-radius: 6px;
+}
+
+#food aside li {
+  margin-bottom: 8px;
+}
+
+#video {
+  text-align: center;
+}
+
+#video figure {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#video video {
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+}
+
+footer {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  color: #ffffff;
+  background-color: #172033;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: #ffffff;
 }
