@@ -28,9 +28,9 @@
 
 ## 서울 홍보 영상
 
-- 파일: `videos/seoul-promotion.mp4`
+- 영상: iStock 외부 MP4 소스
 - 포스터: `images/seoul-video-poster.png`
-- 원본 파일: `istockphoto-2174132865-640_adpp_is.mp4`
-- 출처: iStock
+- 출처: https://www.istockphoto.com/kr/video/gm2174132865
 - 포스터 이미지는 영상의 미리보기 장면을 추출하여 사용했습니다.
-- 사용 권한은 원본을 내려받은 계정의 라이선스 조건을 확인해야 합니다.
+- 외부 영상은 인터넷에 연결되어 있어야 재생할 수 있습니다.
+- 사용 권한은 iStock의 라이선스 조건을 확인해야 합니다.
