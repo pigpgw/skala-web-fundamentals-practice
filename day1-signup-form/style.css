@@ -1,3 +1,24 @@
+header {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+main {
+  /* fixed 헤더는 문서 흐름에서 빠지므로, 헤더가 main을 가리지 않도록 헤더 높이와 추가 간격만큼 위쪽 마진을 준다. */
+  margin-top: 90px;
+}
+
 /* 쉼표(,)는 여러 선택자에 동일한 스타일을 함께 적용하는 그룹 선택 방식이다. */
 /* 별표(*)는 모든 요소를 선택하는 전체 선택자이며, 여기서는 form 내부의 모든 요소를 뜻한다. */
 form,
