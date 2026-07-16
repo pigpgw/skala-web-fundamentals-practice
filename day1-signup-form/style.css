@@ -11,6 +11,10 @@ body {
   overflow-wrap: break-word;
 }
 
+.signup-page {
+  padding-top: 90px;
+}
+
 header {
   z-index: 100;
   position: fixed;
@@ -28,9 +32,13 @@ header h1 {
 }
 
 main {
-  /* fixed 헤더는 문서 흐름에서 빠지므로, 헤더가 main을 가리지 않도록 헤더 높이와 추가 간격만큼 위쪽 마진을 준다. */
   margin-top: 90px;
   padding: 0 16px 40px;
+}
+
+.signup-page main {
+  /* main의 위쪽 마진 대신 body 내부 여백으로 fixed 헤더 공간을 확보한다. */
+  margin-top: 0;
 }
 
 /* 고정 헤더 동작을 확인할 수 있도록 결과 페이지에 스크롤 영역을 만든다. */
@@ -171,6 +179,10 @@ th {
 }
 
 @media (max-width: 480px) {
+  .signup-page {
+    padding-top: 76px;
+  }
+
   header {
     height: 52px;
   }
@@ -182,6 +194,10 @@ th {
   main {
     margin-top: 76px;
     padding: 0 12px 28px;
+  }
+
+  .signup-page main {
+    margin-top: 0;
   }
 
   .signup-form {
