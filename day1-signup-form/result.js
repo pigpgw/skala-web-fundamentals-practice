@@ -33,10 +33,12 @@ const displaySignUpResult = () => {
   resultPassword.textContent = password;
   resultEmail.textContent = email;
   resultPhone.textContent = phoneNumber;
-  resultGender.textContent = gender;
+  resultGender.textContent = GENDER_LABELS[gender] || "-";
   resultInterests.textContent =
-    interests.length > 0 ? interests.join(", ") : "-";
-  resultRegion.textContent = region;
+    interests.length > 0
+      ? interests.map((interest) => INTEREST_LABELS[interest]).join(", ")
+      : "-";
+  resultRegion.textContent = REGION_LABELS[region] || "-";
   resultTermsAccepted.textContent =
     termsAccepted === "on" ? "동의함" : "동의하지 않음";
 };
