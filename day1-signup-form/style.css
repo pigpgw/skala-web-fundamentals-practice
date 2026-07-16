@@ -94,6 +94,18 @@ th {
   font-size: 14px;
 }
 
+.signup-form-required-guide {
+  margin: 0 0 18px;
+  color: #555;
+  font-size: 12px;
+  text-align: right;
+}
+
+.required-mark {
+  color: #d93025;
+  font-weight: bold;
+}
+
 /* 공통 스타일 규칙: 같은 구조와 배치가 반복되는 필드는 별도 클래스 없이 부모와 자손 관계로 함께 선택한다. */
 .signup-form > div {
   display: flex;

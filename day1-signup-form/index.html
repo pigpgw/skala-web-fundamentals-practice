@@ -13,8 +13,14 @@
 
     <main>
       <form action="./result.html" method="get" class="signup-form">
+        <p class="signup-form-required-guide">
+          <span class="required-mark" aria-hidden="true">*</span> 필수 입력
+        </p>
+
         <div>
-          <label for="signup-full-name">이름</label>
+          <label for="signup-full-name">
+            이름 <span class="required-mark" aria-hidden="true">*</span>
+          </label>
           <input
             id="signup-full-name"
             name="fullName"
@@ -25,7 +31,9 @@
         </div>
 
         <div>
-          <label for="signup-login-id">아이디</label>
+          <label for="signup-login-id">
+            아이디 <span class="required-mark" aria-hidden="true">*</span>
+          </label>
           <input
             id="signup-login-id"
             name="loginId"
@@ -37,7 +45,9 @@
         </div>
 
         <div>
-          <label for="signup-password">비밀번호</label>
+          <label for="signup-password">
+            비밀번호 <span class="required-mark" aria-hidden="true">*</span>
+          </label>
           <input
             id="signup-password"
             name="password"
@@ -49,7 +59,9 @@
         </div>
 
         <div>
-          <label for="signup-email">이메일</label>
+          <label for="signup-email">
+            이메일 <span class="required-mark" aria-hidden="true">*</span>
+          </label>
           <input
             id="signup-email"
             name="email"
@@ -149,6 +161,7 @@
               required
             />
             약관 동의
+            <span class="required-mark" aria-hidden="true">*</span>
           </label>
         </div>
 
