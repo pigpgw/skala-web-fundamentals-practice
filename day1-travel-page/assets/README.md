@@ -26,17 +26,11 @@
 - 라이선스: CC BY-SA 4.0
 - 출처: https://commons.wikimedia.org/wiki/File:Starfield_library_4.jpg
 
-## 서울 야경
-
-- 파일: `images/seoul-video-poster.jpg`
-- 작품: Seoul city skyline at night from Namsan Mountain
-- 촬영자: Matt Kieffer
-- 라이선스: CC BY-SA 2.0
-- 출처: https://commons.wikimedia.org/wiki/File:Seoul_city_skyline_at_night_from_Namsan_Mountain_(49175035266).jpg
-
 ## 서울 홍보 영상
 
 - 파일: `videos/seoul-promotion.mp4`
+- 포스터: `images/seoul-video-poster.png`
 - 원본 파일: `istockphoto-2174132865-640_adpp_is.mp4`
 - 출처: iStock
+- 포스터 이미지는 영상의 미리보기 장면을 추출하여 사용했습니다.
 - 사용 권한은 원본을 내려받은 계정의 라이선스 조건을 확인해야 합니다.
