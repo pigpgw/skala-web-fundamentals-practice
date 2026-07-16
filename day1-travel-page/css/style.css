@@ -60,12 +60,21 @@ nav ul {
 #introduction {
   padding: 80px 40px;
   text-align: center;
-  background-color: #e9efff;
+  color: #ffffff;
+  background-image:
+    linear-gradient(rgba(23, 32, 51, 0.72), rgba(79, 70, 229, 0.38)),
+    url("../assets/images/gyeongbokgung.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 #introduction h2 {
   font-size: 40px;
   margin-bottom: 10px;
+}
+
+#introduction p {
+  color: #f4f7ff;
 }
 
 #attractions,
