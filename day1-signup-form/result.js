@@ -1,5 +1,11 @@
 const displaySignUpResult = () => {
   const signupData = sessionStorage.getItem("signupData");
+  // 저장된 회원가입 정보가 없는 직접 접근 방지
+  if (!signupData) {
+    alert("회원가입 정보가 없습니다. 회원가입 페이지로 이동합니다.");
+    window.location.href = "./index.html";
+    return;
+  }
   const data = JSON.parse(signupData);
 
   const name = data.name;
