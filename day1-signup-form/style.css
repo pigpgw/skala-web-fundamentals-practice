@@ -158,4 +158,10 @@ th {
   background-color: #3f2bd4;
   color: white;
   font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.signup-form-submit:hover {
+  background-color: #3321b8;
 }
