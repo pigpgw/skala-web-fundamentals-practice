@@ -25,7 +25,27 @@ main {
 }
 
 table {
+  width: 400px;
   margin: 0 auto;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+caption {
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  width: 120px;
+  background-color: #f7f7fc;
 }
 
 /* 쉼표(,)는 여러 선택자에 동일한 스타일을 함께 적용하는 그룹 선택 방식이다. */
