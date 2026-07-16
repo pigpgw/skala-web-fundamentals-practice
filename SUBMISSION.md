@@ -92,7 +92,7 @@
 
 - [x] 전체 구조를 `header`, `nav`, `main`, `section`, `article`, `aside`, `footer` 시맨틱 요소로 구성
 - [ ] 내비게이션을 `position: fixed`로 고정
-- [ ] 내비게이션 링크의 `href="#id"`를 각 `section`의 `id`와 연결
+- [x] 내비게이션 링크의 `href="#id"`를 각 `section`의 `id`와 연결
 
 #### 세부 요구사항
 
