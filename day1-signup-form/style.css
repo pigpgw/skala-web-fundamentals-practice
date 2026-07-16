@@ -33,9 +33,10 @@ form legend {
   font-size: 14px;
 }
 
-form > div > label {
-  display: block;
-  margin-bottom: 6px;
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 form input,
@@ -56,8 +57,9 @@ form legend {
   margin-bottom: 8px;
 }
 
-form fieldset label {
-  margin-right: 12px;
+.option-group {
+  display: flex;
+  gap: 12px;
 }
 
 /* 모든 input에 적용된 공통 너비와 높이 때문에 라디오와 체크박스가 커지는 것을 방지하고, 브라우저가 알맞은 크기를 자동으로 결정하도록 한다. */
@@ -68,8 +70,9 @@ form input[type="checkbox"] {
 }
 
 .terms-label {
-  /* 약관 체크박스와 텍스트를 같은 줄에 배치하기 위해 inline으로 표시한다. */
-  display: inline;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 form button {
