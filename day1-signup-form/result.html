@@ -19,42 +19,76 @@
         <tbody>
           <tr>
             <th scope="row">이름</th>
-            <td id="result-full-name">홍길동</td>
+            <td id="result-full-name">-</td>
           </tr>
           <tr>
             <th scope="row">아이디</th>
-            <td id="result-login-id">hong1234</td>
+            <td id="result-login-id">-</td>
           </tr>
           <tr>
             <th scope="row">비밀번호</th>
-            <td id="result-password">********</td>
+            <td id="result-password">-</td>
           </tr>
           <tr>
             <th scope="row">이메일</th>
-            <td id="result-email">hong@example.com</td>
+            <td id="result-email">-</td>
           </tr>
           <tr>
             <th scope="row">전화번호</th>
-            <td id="result-phone">010-1234-5678</td>
+            <td id="result-phone">-</td>
           </tr>
           <tr>
             <th scope="row">성별</th>
-            <td id="result-gender">남성</td>
+            <td id="result-gender">-</td>
           </tr>
           <tr>
             <th scope="row">관심분야</th>
-            <td id="result-interests">프론트엔드, 디자인</td>
+            <td id="result-interests">-</td>
           </tr>
           <tr>
             <th scope="row">지역</th>
-            <td id="result-region">광주</td>
+            <td id="result-region">-</td>
           </tr>
           <tr>
             <th scope="row">약관 동의</th>
-            <td id="result-terms-accepted">동의</td>
+            <td id="result-terms-accepted">-</td>
           </tr>
         </tbody>
       </table>
     </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const name = params.get("fullName");
+      const id = params.get("loginId");
+      const password = params.get("password");
+      const email = params.get("email");
+      const phoneNumber = params.get("phone");
+      const gender = params.get("gender");
+      const interests = params.getAll("interests");
+      const region = params.get("region");
+      const termsAccepted = params.get("termsAccepted");
+      const resultFullName = document.getElementById("result-full-name");
+      const resultLoginId = document.getElementById("result-login-id");
+      const resultPassword = document.getElementById("result-password");
+      const resultEmail = document.getElementById("result-email");
+      const resultPhone = document.getElementById("result-phone");
+      const resultGender = document.getElementById("result-gender");
+      const resultInterests = document.getElementById("result-interests");
+      const resultRegion = document.getElementById("result-region");
+      const resultTermsAccepted = document.getElementById(
+        "result-terms-accepted",
+      );
+      resultFullName.textContent = name;
+      resultLoginId.textContent = id;
+      resultPassword.textContent = password;
+      resultEmail.textContent = email;
+      resultPhone.textContent = phoneNumber;
+      resultGender.textContent = gender;
+      resultInterests.textContent = interests.join(", ");
+      resultRegion.textContent = region;
+      resultTermsAccepted.textContent =
+        termsAccepted === "on" ? "동의함" : "동의하지 않음";
+    </script>
   </body>
 </html>
