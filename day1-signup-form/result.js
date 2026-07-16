@@ -21,7 +21,7 @@ const resultTermsAccepted = document.getElementById("result-terms-accepted");
 
 resultFullName.textContent = name;
 resultLoginId.textContent = id;
-resultPassword.textContent = password;
+resultPassword.textContent = password ? "********" : "-";
 resultEmail.textContent = email;
 resultPhone.textContent = phoneNumber;
 resultGender.textContent = gender;
