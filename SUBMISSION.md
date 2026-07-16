@@ -79,20 +79,29 @@
 
 ### 3-2. 여행지 소개 페이지
 
+#### 기본 학습 목표
+
+- [x] `head`에 문서 제목과 문자 인코딩, 뷰포트 정보를 작성
+- [x] `meta`를 사용하여 문서 설명과 작성자 정보를 작성
+- [x] `header`, `nav`, `main`, `section`, `article`, `aside`, `footer`의 의미에 맞게 문서 구조를 작성
+- [x] `figure`와 `figcaption`으로 이미지와 설명을 함께 구성
+- [x] 모든 `img`에 이미지의 내용을 설명하는 `alt`를 작성
+- [x] `video`에 `controls`, `poster`, `source`를 작성
+
 #### 필수 요구사항
 
-- [ ] 전체 구조를 `header`, `nav`, `main`, `section`, `article`, `aside`, `footer` 시맨틱 요소로 구성
+- [x] 전체 구조를 `header`, `nav`, `main`, `section`, `article`, `aside`, `footer` 시맨틱 요소로 구성
 - [ ] 내비게이션을 `position: fixed`로 고정
 - [ ] 내비게이션 링크의 `href="#id"`를 각 `section`의 `id`와 연결
 
 #### 세부 요구사항
 
-- [ ] 명소 갤러리를 `figure` + `figcaption` 3개 이상으로 구성
+- [x] 명소 갤러리를 `figure` + `figcaption` 3개 이상으로 구성
 - [ ] 먹거리 섹션을 본문 `article`과 여행 팁 `aside`의 2단으로 배치
 
 #### 추가 요구사항
 
-- [ ] `video`에 `controls`, `poster` 적용
+- [x] `video`에 `controls`, `poster` 적용
 - [ ] 히어로 배경을 gradient 오버레이와 이미지로 겹쳐서 구성
 - [ ] 명소 카드에 `:hover` 시 이미지가 `scale`로 확대되는 효과 적용
 
