@@ -113,6 +113,11 @@ section h2 {
 #attractions img {
   height: 180px;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+#attractions figure:hover img {
+  transform: scale(1.08);
 }
 
 #attractions figcaption {
