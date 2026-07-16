@@ -119,14 +119,14 @@ th {
 }
 
 /* 역할 규칙: 약관은 일반 label과 배치가 다르므로 개별 클래스로 구분한다. */
-.terms-label {
+.signup-form-terms {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
 /* 역할 규칙: 제출 버튼은 강조와 상태 스타일이 추가될 수 있는 요소이므로 개별 클래스로 구분한다. */
-.submit-btn {
+.signup-form-submit {
   width: 100%;
   height: 42px;
   border: 0;
