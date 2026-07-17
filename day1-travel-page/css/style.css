@@ -63,7 +63,9 @@ nav ul {
 }
 
 #introduction {
-  padding: 80px 40px;
+  position: relative;
+  height: 320px;
+  padding: 0 40px;
   text-align: center;
   color: #ffffff;
   background-image:
@@ -71,6 +73,14 @@ nav ul {
     url("../assets/images/gyeongbokgung.jpg");
   background-position: center;
   background-size: cover;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% - 80px);
+  transform: translate(-50%, -50%);
 }
 
 #introduction h2 {
