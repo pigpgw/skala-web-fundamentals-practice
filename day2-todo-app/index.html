@@ -1,60 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>인터랙티브 할 일 관리 앱</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
   <body>
-    <header>
-      <h1>할 일 관리</h1>
+    <div class="todo-app">
+      <header class="app-header">
+        <h1>할 일 관리</h1>
 
-      <section>
-        <h2>오늘의 한마디</h2>
-        <blockquote>
-          <p>불러오는 중...</p>
-        </blockquote>
-      </section>
-    </header>
+        <section class="quote">
+          <h2>오늘의 한마디</h2>
+          <blockquote>
+            <p>불러오는 중...</p>
+          </blockquote>
+        </section>
+      </header>
 
     <main>
-      <section>
-        <h2>할 일 추가</h2>
+      <section class="add-area">
+        <h2 class="screen-reader-text">할 일 추가</h2>
 
         <form>
-          <label>새로운 할 일</label>
-          <input>
-          <button>추가</button>
+          <label class="screen-reader-text" for="todo-input">새로운 할 일</label>
+          <input id="todo-input" type="text" placeholder="새로운 할 일을 입력하세요">
+          <button type="submit">추가</button>
         </form>
       </section>
 
-      <nav>
-        <h2>할 일 필터</h2>
+      <nav class="filters">
+        <h2 class="screen-reader-text">할 일 필터</h2>
 
         <ul>
-          <li><button>전체</button></li>
-          <li><button>진행 중</button></li>
-          <li><button>완료</button></li>
+          <li><button class="active" type="button">전체</button></li>
+          <li><button type="button">진행 중</button></li>
+          <li><button type="button">완료</button></li>
         </ul>
       </nav>
 
-      <section>
-        <h2>할 일 목록</h2>
+      <section class="todo-list-area">
+        <h2 class="screen-reader-text">할 일 목록</h2>
 
-        <ul>
+        <ul class="todo-list">
           <li>
-            <input>
-            <span>할 일 내용</span>
-            <button>삭제</button>
+            <input type="checkbox">
+            <span>장보기</span>
+            <button class="delete-button" type="button">×</button>
+          </li>
+          <li class="completed">
+            <input type="checkbox" checked>
+            <span>코딩 공부하기</span>
+            <button class="delete-button" type="button">×</button>
           </li>
         </ul>
 
-        <p>할 일이 없습니다.</p>
+        <p class="empty-message">할 일이 없습니다.</p>
       </section>
     </main>
 
-    <footer>
-      <p>전체 개수: <strong>0</strong></p>
-      <p>완료 개수: <strong>0</strong></p>
-    </footer>
+      <footer class="summary">
+        <p>전체 개수: <strong>0</strong></p>
+        <p>완료 개수: <strong>0</strong></p>
+      </footer>
+    </div>
   </body>
 </html>
