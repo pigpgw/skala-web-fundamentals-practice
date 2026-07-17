@@ -1,7 +1,7 @@
 import { loadTodos, saveTodos } from "./storage.js";
+import { getDailyRandomQuote } from "./apis.js";
 
 let todos = loadTodos();
-
 let currentFilter = "all";
 
 const todoList = document.querySelector("#todo-list");
@@ -13,6 +13,18 @@ const filterButtons = document.querySelectorAll(".filters button");
 const allFilterButton = document.querySelector("#all-filter");
 const activeFilterButton = document.querySelector("#active-filter");
 const completedFilterButton = document.querySelector("#completed-filter");
+const dailyQuote = document.querySelector("#daily-quote");
+
+const updateDailyQuote = async () => {
+  try {
+    const quote = await getDailyRandomQuote();
+    dailyQuote.textContent = quote;
+  } catch (error) {
+    dailyQuote.textContent = "작은 시작이 큰 변화를 만듭니다.";
+  }
+};
+
+updateDailyQuote();
 
 function createTodoItem(todo) {
   const todoItem = document.createElement("li");
