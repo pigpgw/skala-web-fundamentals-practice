@@ -11,6 +11,8 @@
   --text-color: #0b1c30;
   --sub-text-color: #5f6470;
   --border-color: #dfe2eb;
+  --card-shadow: rgba(11, 28, 48, 0.08);
+  --card-hover-shadow: rgba(11, 28, 48, 0.2);
 }
 
 body {
@@ -100,7 +102,14 @@ main {
   background-color: var(--surface-color);
   border: 1px solid var(--border-color);
   border-radius: 8px;
+  box-shadow: 0 4px 12px var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px var(--card-hover-shadow);
 }
 
 .product-card figure {
