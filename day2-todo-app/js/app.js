@@ -1,4 +1,4 @@
-const todos = [
+let todos = [
   {
     id: 0,
     text: "장보기",
@@ -28,7 +28,7 @@ function createTodoItem(todo) {
   todoItem.innerHTML = `
     <input type="checkbox" ${todo.done ? "checked" : ""}>
     <span>${todo.text}</span>
-    <button class="delete-button" type="button" aria-label="삭제">×</button>
+    <button class="delete-button" type="button" aria-label="삭제">✕</button>
   `;
 
   return todoItem;
@@ -68,18 +68,28 @@ renderTodoList();
 
 todoList.addEventListener("click", function (event) {
   const checkbox = event.target.closest('input[type="checkbox"]');
+  const deleteButton = event.target.closest(".delete-button");
 
-  if (checkbox === null) {
+  if (checkbox === null && deleteButton === null) {
     return;
   }
 
-  const todoItem = checkbox.closest(".todo-item");
+  const todoItem = event.target.closest(".todo-item");
   const todoId = Number(todoItem.dataset.id);
 
-  const todo = todos.find(function (todo) {
-    return todo.id === todoId;
-  });
+  if (checkbox !== null) {
+    const todo = todos.find(function (todo) {
+      return todo.id === todoId;
+    });
 
-  todo.done = !todo.done;
+    todo.done = !todo.done;
+  }
+
+  if (deleteButton !== null) {
+    todos = todos.filter(function (todo) {
+      return todo.id !== todoId;
+    });
+  }
+
   renderTodoList();
 });
