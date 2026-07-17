@@ -76,16 +76,34 @@ main {
   margin-bottom: 48px;
 }
 
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero h1 {
   margin: 0 0 12px;
   color: var(--primary-color);
   font-size: 40px;
+  opacity: 0;
+  animation: fade-in-up 0.8s ease forwards;
+  animation-delay: 0.1s;
 }
 
 .hero p {
   max-width: 640px;
   margin: 0;
   color: var(--sub-text-color);
+  opacity: 0;
+  animation: fade-in-up 0.8s ease forwards;
+  animation-delay: 0.3s;
 }
 
 .product-section h2 {
@@ -103,7 +121,9 @@ main {
   border: 1px solid var(--border-color);
   border-radius: 8px;
   box-shadow: 0 4px 12px var(--card-shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   overflow: hidden;
 }
 
