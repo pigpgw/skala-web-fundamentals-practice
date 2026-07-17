@@ -1,11 +1,11 @@
 let todos = [
   {
-    id: 0,
+    id: crypto.randomUUID(),
     text: "장보기",
     done: false,
   },
   {
-    id: 1,
+    id: crypto.randomUUID(),
     text: "코딩 공부하기",
     done: true,
   },
@@ -53,7 +53,7 @@ function addTodo(event) {
   }
 
   const newTodo = {
-    id: todos.length,
+    id: crypto.randomUUID(),
     text: text,
     done: false,
   };
@@ -75,7 +75,7 @@ todoList.addEventListener("click", function (event) {
   }
 
   const todoItem = event.target.closest(".todo-item");
-  const todoId = Number(todoItem.dataset.id);
+  const todoId = todoItem.dataset.id;
 
   if (checkbox !== null) {
     const todo = todos.find(function (todo) {
