@@ -15,6 +15,17 @@
   --card-hover-shadow: rgba(11, 28, 48, 0.2);
 }
 
+:root[data-theme="dark"] {
+  --primary-color: #9d91ff;
+  --background-color: #11131a;
+  --surface-color: #1b1e27;
+  --text-color: #f4f5f8;
+  --sub-text-color: #b5bac7;
+  --border-color: #343844;
+  --card-shadow: rgba(0, 0, 0, 0.25);
+  --card-hover-shadow: rgba(0, 0, 0, 0.5);
+}
+
 body {
   margin: 0;
   color: var(--text-color);
