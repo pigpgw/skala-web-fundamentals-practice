@@ -205,6 +205,11 @@ footer p {
   margin: 0;
 }
 
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
 footer a {
   color: #ffffff;
 }
@@ -258,5 +263,14 @@ footer a {
 
   #attractions figure {
     width: 100%;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
   }
 }
