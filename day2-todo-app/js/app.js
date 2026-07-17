@@ -14,6 +14,7 @@ const allFilterButton = document.querySelector("#all-filter");
 const activeFilterButton = document.querySelector("#active-filter");
 const completedFilterButton = document.querySelector("#completed-filter");
 const dailyQuote = document.querySelector("#daily-quote");
+const emptyMessage = document.querySelector(".empty-message");
 
 const updateDailyQuote = async () => {
   try {
@@ -60,6 +61,20 @@ function renderTodoList() {
 
     return true;
   });
+
+  if (filteredTodos.length === 0) {
+    emptyMessage.style.display = "block";
+
+    if (currentFilter === "active") {
+      emptyMessage.textContent = "진행 중인 할 일이 없습니다.";
+    } else if (currentFilter === "completed") {
+      emptyMessage.textContent = "완료한 할 일이 없습니다.";
+    } else {
+      emptyMessage.textContent = "등록된 할 일이 없습니다.";
+    }
+  } else {
+    emptyMessage.style.display = "none";
+  }
 
   filteredTodos.forEach(function (todo) {
     const todoItem = createTodoItem(todo);
