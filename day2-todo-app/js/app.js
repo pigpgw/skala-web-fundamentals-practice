@@ -1,22 +1,6 @@
-const defaultTodos = [
-  {
-    id: crypto.randomUUID(),
-    text: "장보기",
-    done: false,
-  },
-  {
-    id: crypto.randomUUID(),
-    text: "코딩 공부하기",
-    done: true,
-  },
-];
+import { loadTodos, saveTodos } from "./storage.js";
 
-const savedTodos = localStorage.getItem("todos");
-let todos = savedTodos === null ? defaultTodos : JSON.parse(savedTodos);
-
-function saveTodos(todos) {
-  localStorage.setItem("todos", JSON.stringify(todos));
-}
+let todos = loadTodos();
 
 let currentFilter = "all";
 

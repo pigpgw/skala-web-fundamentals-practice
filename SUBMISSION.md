@@ -235,13 +235,13 @@
 
 #### 추가 요구사항
 
-- [ ] `storage.js`(데이터) / `app.js`(화면)로 모듈을 분리하고 `type="module"` 사용
+- [x] `storage.js`(데이터) / `app.js`(화면)로 모듈을 분리하고 `type="module"` 사용
 - [x] `localStorage`로 할 일 데이터를 저장하고 복원
 - [ ] 오늘의 한마디를 `fetch`로 불러오고 실패 시 기본 문구 표시
 
 #### 기본 테스트
 
-- [ ] Live Server 또는 `python -m http.server`로 실행하여 ES 모듈 오류가 없는지 확인
+- [x] Live Server 또는 `python -m http.server`로 실행하여 ES 모듈 오류가 없는지 확인
 - [ ] 입력 후 Enter를 누르면 목록에 추가되고 입력창이 비워지는지 확인
 
 #### 검증 테스트
