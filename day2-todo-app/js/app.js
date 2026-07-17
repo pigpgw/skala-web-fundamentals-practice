@@ -11,11 +11,17 @@ let todos = [
   },
 ];
 
+let currentFilter = "all";
+
 const todoList = document.querySelector("#todo-list");
 const todoForm = document.querySelector(".add-area form");
 const todoInput = document.querySelector("#todo-input");
 const totalCount = document.querySelector("#total-count");
 const completedCount = document.querySelector("#completed-count");
+const filterButtons = document.querySelectorAll(".filters button");
+const allFilterButton = document.querySelector("#all-filter");
+const activeFilterButton = document.querySelector("#active-filter");
+const completedFilterButton = document.querySelector("#completed-filter");
 
 function createTodoItem(todo) {
   const todoItem = document.createElement("li");
@@ -39,7 +45,19 @@ function createTodoItem(todo) {
 function renderTodoList() {
   todoList.innerHTML = "";
 
-  todos.forEach(function (todo) {
+  const filteredTodos = todos.filter(function (todo) {
+    if (currentFilter === "active") {
+      return todo.done === false;
+    }
+
+    if (currentFilter === "completed") {
+      return todo.done === true;
+    }
+
+    return true;
+  });
+
+  filteredTodos.forEach(function (todo) {
     const todoItem = createTodoItem(todo);
     todoList.appendChild(todoItem);
   });
@@ -70,6 +88,32 @@ function addTodo(event) {
 
 todoForm.addEventListener("submit", addTodo);
 renderTodoList();
+
+function changeActiveFilter(activeButton) {
+  filterButtons.forEach(function (button) {
+    button.classList.remove("active");
+  });
+
+  activeButton.classList.add("active");
+}
+
+allFilterButton.addEventListener("click", function () {
+  currentFilter = "all";
+  changeActiveFilter(allFilterButton);
+  renderTodoList();
+});
+
+activeFilterButton.addEventListener("click", function () {
+  currentFilter = "active";
+  changeActiveFilter(activeFilterButton);
+  renderTodoList();
+});
+
+completedFilterButton.addEventListener("click", function () {
+  currentFilter = "completed";
+  changeActiveFilter(completedFilterButton);
+  renderTodoList();
+});
 
 todoList.addEventListener("click", function (event) {
   const checkbox = event.target.closest('input[type="checkbox"]');
