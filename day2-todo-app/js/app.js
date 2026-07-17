@@ -11,4 +11,34 @@ const todos = [
   },
 ];
 
-console.log(todos);
+const todoList = document.querySelector("#todo-list");
+
+function createTodoItem(todo) {
+  const todoItem = document.createElement("li");
+
+  todoItem.className = "todo-item";
+  todoItem.dataset.id = todo.id;
+
+  if (todo.done) {
+    todoItem.classList.add("completed");
+  }
+
+  todoItem.innerHTML = `
+    <input type="checkbox" ${todo.done ? "checked" : ""}>
+    <span>${todo.text}</span>
+    <button class="delete-button" type="button" aria-label="삭제">×</button>
+  `;
+
+  return todoItem;
+}
+
+function renderTodoList() {
+  todoList.innerHTML = "";
+
+  todos.forEach(function (todo) {
+    const todoItem = createTodoItem(todo);
+    todoList.appendChild(todoItem);
+  });
+}
+
+renderTodoList();
