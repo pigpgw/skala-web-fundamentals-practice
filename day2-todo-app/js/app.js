@@ -30,19 +30,30 @@ updateDailyQuote();
 
 function createTodoItem(todo) {
   const todoItem = document.createElement("li");
+  const checkbox = document.createElement("input");
+  const todoText = document.createElement("span");
+  const deleteButton = document.createElement("button");
 
   todoItem.className = "todo-item";
   todoItem.dataset.id = todo.id;
+
+  checkbox.type = "checkbox";
+  checkbox.checked = todo.done;
+
+  todoText.textContent = todo.text;
+
+  deleteButton.className = "delete-button";
+  deleteButton.type = "button";
+  deleteButton.setAttribute("aria-label", "삭제");
+  deleteButton.textContent = "✕";
 
   if (todo.done) {
     todoItem.classList.add("completed");
   }
 
-  todoItem.innerHTML = `
-    <input type="checkbox" ${todo.done ? "checked" : ""}>
-    <span>${todo.text}</span>
-    <button class="delete-button" type="button" aria-label="삭제">✕</button>
-  `;
+  todoItem.appendChild(checkbox);
+  todoItem.appendChild(todoText);
+  todoItem.appendChild(deleteButton);
 
   return todoItem;
 }
