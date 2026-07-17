@@ -12,13 +12,18 @@ const defaultTodos = [
 ];
 
 export function loadTodos() {
-  const savedTodos = localStorage.getItem("todos");
+  try {
+    const savedTodos = localStorage.getItem("todos");
 
-  if (savedTodos === null) {
-    return defaultTodos;
+    if (savedTodos === null) {
+      return defaultTodos;
+    }
+
+    return JSON.parse(savedTodos);
+  } catch (error) {
+    console.error("저장된 할 일 데이터를 불러오지 못했습니다.", error);
+    return [];
   }
-
-  return JSON.parse(savedTodos);
 }
 
 export function saveTodos(todos) {
