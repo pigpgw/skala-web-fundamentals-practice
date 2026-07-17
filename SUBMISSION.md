@@ -165,7 +165,7 @@
 
 #### 필수 요구사항
 
-- [ ] `:root`에 5개 이상의 색상 변수를 정의하고 전 구간에서 `var()` 사용
+- [x] `:root`에 5개 이상의 색상 변수를 정의하고 전 구간에서 `var()` 사용
 - [ ] 6개 이상의 상품 카드를 `display: grid` + `repeat(3, 1fr)`로 3열 배치
 - [ ] 상단바와 카드 내부 정렬에 Flexbox의 `space-between`, `margin-left: auto` 사용
 
