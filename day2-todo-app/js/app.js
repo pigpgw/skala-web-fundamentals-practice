@@ -20,6 +20,7 @@ const updateDailyQuote = async () => {
     const quote = await getDailyRandomQuote();
     dailyQuote.textContent = quote;
   } catch (error) {
+    console.error(error.message);
     dailyQuote.textContent = "작은 시작이 큰 변화를 만듭니다.";
   }
 };
