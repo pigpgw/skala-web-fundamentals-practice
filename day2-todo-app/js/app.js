@@ -1,4 +1,4 @@
-let todos = [
+const defaultTodos = [
   {
     id: crypto.randomUUID(),
     text: "장보기",
@@ -10,6 +10,13 @@ let todos = [
     done: true,
   },
 ];
+
+const savedTodos = localStorage.getItem("todos");
+let todos = savedTodos === null ? defaultTodos : JSON.parse(savedTodos);
+
+function saveTodos(todos) {
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
 
 let currentFilter = "all";
 
@@ -82,6 +89,7 @@ function addTodo(event) {
   };
 
   todos.push(newTodo);
+  saveTodos(todos);
   todoInput.value = "";
   renderTodoList();
 }
@@ -132,12 +140,15 @@ todoList.addEventListener("click", function (event) {
     });
 
     todo.done = !todo.done;
+    saveTodos(todos);
   }
 
   if (deleteButton !== null) {
     todos = todos.filter(function (todo) {
       return todo.id !== todoId;
     });
+
+    saveTodos(todos);
   }
 
   renderTodoList();
