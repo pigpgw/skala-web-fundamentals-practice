@@ -14,6 +14,8 @@ let todos = [
 const todoList = document.querySelector("#todo-list");
 const todoForm = document.querySelector(".add-area form");
 const todoInput = document.querySelector("#todo-input");
+const totalCount = document.querySelector("#total-count");
+const completedCount = document.querySelector("#completed-count");
 
 function createTodoItem(todo) {
   const todoItem = document.createElement("li");
@@ -41,6 +43,9 @@ function renderTodoList() {
     const todoItem = createTodoItem(todo);
     todoList.appendChild(todoItem);
   });
+
+  totalCount.innerHTML = todos.length;
+  completedCount.innerHTML = todos.filter((todo) => todo.done === true).length;
 }
 
 function addTodo(event) {
