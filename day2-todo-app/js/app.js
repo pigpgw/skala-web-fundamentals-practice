@@ -65,3 +65,20 @@ function addTodo(event) {
 
 todoForm.addEventListener("submit", addTodo);
 renderTodoList();
+
+const checkboxes = todoList.querySelectorAll('input[type="checkbox"]');
+
+checkboxes.forEach(function (checkbox) {
+  checkbox.addEventListener("click", function (event) {
+    const todoItem = event.target.closest(".todo-item");
+    const todoId = Number(todoItem.dataset.id);
+
+    const todo = todos.find(function (todo) {
+      return todo.id === todoId;
+    });
+
+    todo.done = !todo.done;
+    console.log("완료 상태 변경:", todo);
+    renderTodoList();
+  });
+});
