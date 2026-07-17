@@ -12,6 +12,8 @@ const todos = [
 ];
 
 const todoList = document.querySelector("#todo-list");
+const todoForm = document.querySelector(".add-area form");
+const todoInput = document.querySelector("#todo-input");
 
 function createTodoItem(todo) {
   const todoItem = document.createElement("li");
@@ -41,4 +43,25 @@ function renderTodoList() {
   });
 }
 
+function addTodo(event) {
+  event.preventDefault();
+
+  const text = todoInput.value.trim();
+
+  if (text === "") {
+    return;
+  }
+
+  const newTodo = {
+    id: todos.length,
+    text: text,
+    done: false,
+  };
+
+  todos.push(newTodo);
+  todoInput.value = "";
+  renderTodoList();
+}
+
+todoForm.addEventListener("submit", addTodo);
 renderTodoList();
