@@ -1,7 +1,7 @@
-import { loadTodos, saveTodos } from "./storage.js";
+import { TodoManager } from "./storage.js";
 import { getDailyRandomQuote } from "./apis.js";
 
-let todos = loadTodos();
+const todoManager = new TodoManager();
 let currentFilter = "all";
 
 const todoList = document.querySelector("#todo-list");
@@ -61,7 +61,7 @@ function createTodoItem(todo) {
 function renderTodoList() {
   todoList.innerHTML = "";
 
-  const filteredTodos = todos.filter(function (todo) {
+  const filteredTodos = todoManager.todos.filter(function (todo) {
     if (currentFilter === "active") {
       return todo.done === false;
     }
@@ -92,8 +92,10 @@ function renderTodoList() {
     todoList.appendChild(todoItem);
   });
 
-  totalCount.innerHTML = todos.length;
-  completedCount.innerHTML = todos.filter((todo) => todo.done === true).length;
+  totalCount.innerHTML = todoManager.todos.length;
+  completedCount.innerHTML = todoManager.todos.filter(
+    (todo) => todo.done === true,
+  ).length;
 }
 
 function addTodo(event) {
@@ -105,14 +107,7 @@ function addTodo(event) {
     return;
   }
 
-  const newTodo = {
-    id: crypto.randomUUID(),
-    text: text,
-    done: false,
-  };
-
-  todos.push(newTodo);
-  saveTodos(todos);
+  todoManager.addTodo(text);
   todoInput.value = "";
   renderTodoList();
 }
@@ -158,20 +153,11 @@ todoList.addEventListener("click", function (event) {
   const todoId = todoItem.dataset.id;
 
   if (checkbox !== null) {
-    const todo = todos.find(function (todo) {
-      return todo.id === todoId;
-    });
-
-    todo.done = !todo.done;
-    saveTodos(todos);
+    todoManager.toggleTodo(todoId);
   }
 
   if (deleteButton !== null) {
-    todos = todos.filter(function (todo) {
-      return todo.id !== todoId;
-    });
-
-    saveTodos(todos);
+    todoManager.removeTodo(todoId);
   }
 
   renderTodoList();
