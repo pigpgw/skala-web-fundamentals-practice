@@ -1,7 +1,6 @@
-import { TodoManager } from "./storage.js";
+import { todoManager } from "./storage.js";
 import { getDailyRandomQuote } from "./apis.js";
 
-const todoManager = new TodoManager();
 let currentFilter = "all";
 
 const todoList = document.querySelector("#todo-list");

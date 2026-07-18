@@ -11,9 +11,16 @@ const defaultTodos = [
   },
 ];
 
-export class TodoManager {
+class TodoManager {
+  static instance = null;
+
   constructor() {
+    if (TodoManager.instance) {
+      return TodoManager.instance;
+    }
+
     this.todos = this.loadTodos();
+    TodoManager.instance = this;
   }
 
   loadTodos() {
@@ -72,3 +79,5 @@ export class TodoManager {
     this.saveTodos();
   }
 }
+
+export const todoManager = new TodoManager();
